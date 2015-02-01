@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+     <link rel="stylesheet" href="~/Styles/StyleSheet1.css" type="text/css"/>
+    <script src="~/Scripts/Lib/jquery-1.11.2.min.js"></script>
+     <script src="~/Scripts/Layout/scriptL.js"  type="text/javascript" ></script>
+    @RenderSection(name:"Header", required:false)
+
+<title>@ViewBag.Title</title>
+</head>
+
+<body>
+  <nav>
+  <ul>
+    <li><div class="color default"></div></li>
+    <li><div class="color red"></div></li>
+    <li><div class="color green"></div></li>
+    <li><div class="color blue"></div></li>
+    <li><div class="color yellow"></div></li>
+  </ul>
+  <ul class="nav">
+    <li><a href="@Url.Action("Index", "articleslist", new {})">Home</a><li>
+    <li><a href="@Url.Action("Index", "NewArticle", new {})">New Article</a><li>
+    <h2>Mood Colors</h2>
+  <hr class="line default"></hr>
+  </ul>
+  
+</nav>
+  
+<main class="default">
+    @RenderBody();
+</main></body>
+    </html>

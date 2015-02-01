@@ -1,0 +1,31 @@
+﻿@using Blog.Enyities;
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+    ViewBag.Title = "Article List";
+    List<Article> list = ViewBag.Articles;
+}
+
+@section Header
+{
+    <link rel="stylesheet" href="~/Styles/StyleSheetArticleList.css" type="text/css"/>
+}
+
+    
+@foreach (Article article in list)
+{
+ <section>
+     <h1>@article.Title</h1>
+     <div class="line default">
+          <p class="publishdate">@(((DateTime)article.CreationDate).ToString())</p>
+     </div>
+     <article>
+        @article.ShortContent
+          <p>
+            <a class="more" href ="@Url.Action("Index", "Article", new { id = article.Id})">Read more...</a>
+        </p>
+     </article>
+ </section>
+}
+       
+      
+   

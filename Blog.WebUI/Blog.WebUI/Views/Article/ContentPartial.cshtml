@@ -1,0 +1,15 @@
+﻿@{
+    Blog.Enyities.Article article = ViewBag.Article;
+}
+
+   
+     <h1>@article.Title</h1>
+     <div class="line default">
+           <p class="publishdate">@(((DateTime)article.CreationDate).ToString())</p>
+     </div>
+    <p class="brifly">
+         @article.ShortContent
+    </p>
+     <article>
+        @article.Content
+     </article>

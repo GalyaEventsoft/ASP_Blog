@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BlogModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="BlogModelStoreContainer">
+    <EntitySet Name="Articles" EntityType="BlogModel.Store.Articles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BlogUsers" EntityType="BlogModel.Store.BlogUsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Comments" EntityType="BlogModel.Store.Comments" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__Articles__UserId__060DEAE8" Association="BlogModel.Store.FK__Articles__UserId__060DEAE8">
+      <End Role="BlogUsers" EntitySet="BlogUsers" />
+      <End Role="Articles" EntitySet="Articles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comments__Articl__0CBAE877" Association="BlogModel.Store.FK__Comments__Articl__0CBAE877">
+      <End Role="Articles" EntitySet="Articles" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comments__UserId__0BC6C43E" Association="BlogModel.Store.FK__Comments__UserId__0BC6C43E">
+      <End Role="BlogUsers" EntitySet="BlogUsers" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Articles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Title" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Content" Type="text" Nullable="false" />
+    <Property Name="ShortContent" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="BlogUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="64" />
+    <Property Name="Login" Type="varchar" MaxLength="64" />
+    <Property Name="Password" Type="varchar" MaxLength="64" />
+    <Property Name="IsAdmin" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="ArticleID" Type="int" Nullable="false" />
+    <Property Name="CommentText" Type="text" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Articles__UserId__060DEAE8">
+    <End Role="BlogUsers" Type="BlogModel.Store.BlogUsers" Multiplicity="1" />
+    <End Role="Articles" Type="BlogModel.Store.Articles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BlogUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Articles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comments__Articl__0CBAE877">
+    <End Role="Articles" Type="BlogModel.Store.Articles" Multiplicity="1" />
+    <End Role="Comments" Type="BlogModel.Store.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="ArticleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comments__UserId__0BC6C43E">
+    <End Role="BlogUsers" Type="BlogModel.Store.BlogUsers" Multiplicity="1" />
+    <End Role="Comments" Type="BlogModel.Store.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BlogUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

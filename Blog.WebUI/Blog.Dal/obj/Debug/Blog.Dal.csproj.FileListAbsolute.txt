@@ -1,0 +1,11 @@
+C:\Users\Galya\Desktop\Blog.WebUI\Blog.Dal\obj\Debug\Blog.Dal.csprojResolveAssemblyReference.cache
+C:\Users\Galya\Desktop\Blog.WebUI\Blog.Dal\bin\Debug\Blog.Dal.dll.config
+C:\Users\Galya\Desktop\Blog.WebUI\Blog.Dal\bin\Debug\Blog.Dal.dll
+C:\Users\Galya\Desktop\Blog.WebUI\Blog.Dal\bin\Debug\Blog.Dal.pdb
+C:\Users\Galya\Desktop\Blog.WebUI\Blog.Dal\bin\Debug\Blog.Enyities.dll
+C:\Users\Galya\Desktop\Blog.WebUI\Blog.Dal\bin\Debug\EntityFramework.dll
+C:\Users\Galya\Desktop\Blog.WebUI\Blog.Dal\bin\Debug\Blog.Enyities.pdb
+C:\Users\Galya\Desktop\Blog.WebUI\Blog.Dal\bin\Debug\EntityFramework.xml
+C:\Users\Galya\Desktop\Blog.WebUI\Blog.Dal\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Galya\Desktop\Blog.WebUI\Blog.Dal\obj\Debug\Blog.Dal.dll
+C:\Users\Galya\Desktop\Blog.WebUI\Blog.Dal\obj\Debug\Blog.Dal.pdb

@@ -1,0 +1,22 @@
+﻿@using Blog.Dal;
+@{   
+   List< Blog.Enyities.Comment> coments = ViewBag.Comments;
+}
+
+@if(coments.Count > 0)
+{         
+    foreach (Blog.Enyities.Comment coment in coments)
+    {
+        <div class="line default">
+                <p class="publishdate">@(((DateTime)coment.CreationDate).ToString())</p>
+        </div>
+          
+        <article>
+                @coment.CommentText                    
+        </article>
+        <p class="publishdate">@(new UserDal().GetUser(coment.UserId).Name)</p>
+    }
+            
+}
+
+   

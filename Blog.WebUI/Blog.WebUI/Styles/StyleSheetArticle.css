@@ -1,0 +1,11 @@
+﻿body {
+}
+
+.brifly {
+  text-align: justify;
+  padding: 40px 10px 0px 10px;
+  font-weight:700;
+  font-size: 16px;
+  font-style:italic;
+  line-height: 1.5;
+}

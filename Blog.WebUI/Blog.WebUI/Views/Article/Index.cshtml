@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+    ViewBag.Title = "Article";
+    //Blog.Enyities.Article article = ViewBag.Article;
+}
+
+
+@section Header
+{
+    <link rel="stylesheet" href="~/Styles/StyleSheetArticle.css" type="text/css"/>
+     <link rel="stylesheet" href="~/Styles/StyleSheetAddComment.css" type="text/css"/>
+    <script src="~/Scripts/MicrosoftAjax.js" type="text/javascript"></script>
+     <script src=" ~/Scripts/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
+   <script src="~/Scripts/Comments/AddComment.js"></script>
+
+}
+
+    <div>
+        <section>
+            @Html.Partial("ContentPartial")
+        </section>
+    </div>
+    <div>
+        <section>
+            @{                
+                Html.RenderPartial("AddCommentPartial");
+            }
+        </section>
+    </div>
+    <div>
+         <div>
+        <section id="update_container">   
+            @{                
+               Html.RenderPartial("ComentSPartial");
+            }
+            </section>
+             </div>
+    </div>
+  
+
+
+

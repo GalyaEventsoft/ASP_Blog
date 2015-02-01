@@ -1,0 +1,49 @@
+﻿@model Blog.WebUI.Models.ArticleContentModel
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "New Article";
+}
+
+@section Header
+{
+    <link rel="stylesheet" href="~/Styles/StyleSheetNewArticle.css" type="text/css"/>
+}
+
+
+@using (Html.BeginForm("Index","NewArticle",null))    
+{
+    
+@* @Html.ValidationSummary(true)*@
+    <section>  
+        <p>
+            @Html.LabelFor(model => model.Title, new {@class="editor-label"})
+        </p>
+        <p>
+            @Html.EditorFor(model => model.Title)
+           @* @Html.ValidationMessageFor(model => model.Title)*@
+        </p>
+        <p>
+            @Html.LabelFor(model => model.ShortContent, new {@class="editor-label"})
+        </p>
+        <p>
+            @Html.TextAreaFor(model => model.ShortContent, new {@class="editor-textfield"})
+           @* @Html.ValidationMessageFor(model => model.Content)*@
+        </p>    
+        <p>
+            @Html.LabelFor(model => model.Content, new {@class="editor-label"})
+        </p>
+        <p>
+            @Html.TextAreaFor(model => model.Content, new {@class="editor-textfield"})
+           @* @Html.ValidationMessageFor(model => model.Content)*@
+        </p>
+        
+
+<p>
+    <input type="submit" value="Sent to server" />
+</p>
+
+        </section>
+}
