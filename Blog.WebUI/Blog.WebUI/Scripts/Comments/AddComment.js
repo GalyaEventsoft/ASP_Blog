@@ -13,7 +13,7 @@
                     };
 
                     $.ajax({
-                        url: "Article/AddComment",
+                        url: "Article/Index",
                         dataType: "json",
                         type: "POST",
 
