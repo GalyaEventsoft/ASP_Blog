@@ -13,7 +13,7 @@ namespace Blog.Dal
         {
             using (BlogEntities context = new BlogEntities())
             {
-                return context.Articles.ToList();
+                return context.Articles.OrderByDescending(a => a.CreationDate).ToList();
             }
         }
 
