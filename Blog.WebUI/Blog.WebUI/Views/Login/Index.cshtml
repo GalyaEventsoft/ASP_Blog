@@ -6,22 +6,23 @@
 
 
 <div style="text-align:center; height:100%; width:100%;">
+     @Html.ValidationSummary(true)
     <section>
     <form  action="@Url.Action("Logined", "Login")" method="post">
          <p>
               @Html.LabelFor(x => x.Login, new {@class="editor-label"})
+              @Html.ValidationMessageFor(model => model.Login)
          </p>
            <p>
                 @Html.TextBoxFor(x => x.Login)
          </p>
-        <p>
+            <p>
                 @Html.LabelFor(x => x.Password, new {@class="editor-label"})
-
-        </p>
+                 @Html.ValidationMessageFor(model => model.Password)
+           </p>
            <p>
                     @Html.PasswordFor(x => x.Password)</p>
-           <p>
-           
+            <p>
                 <button type="submit">Log In</button>
             </p>
         

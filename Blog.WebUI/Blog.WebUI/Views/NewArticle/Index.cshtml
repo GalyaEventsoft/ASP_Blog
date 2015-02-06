@@ -16,28 +16,35 @@
 @using (Html.BeginForm("Index","NewArticle",null))    
 {
     
-@* @Html.ValidationSummary(true)*@
+ @Html.ValidationSummary(true)
     <section>  
         <p>
             @Html.LabelFor(model => model.Title, new {@class="editor-label"})
         </p>
         <p>
             @Html.EditorFor(model => model.Title)
-           @* @Html.ValidationMessageFor(model => model.Title)*@
+             </p>    
+        <p>
+            @Html.ValidationMessageFor(model => model.Title)
         </p>
         <p>
             @Html.LabelFor(model => model.ShortContent, new {@class="editor-label"})
         </p>
         <p>
             @Html.TextAreaFor(model => model.ShortContent, new {@class="editor-textfield"})
-           @* @Html.ValidationMessageFor(model => model.Content)*@
+           </p>    
+        <p>
+             @Html.ValidationMessageFor(model => model.ShortContent)
         </p>    
         <p>
             @Html.LabelFor(model => model.Content, new {@class="editor-label"})
         </p>
         <p>
             @Html.TextAreaFor(model => model.Content, new {@class="editor-textfield"})
-           @* @Html.ValidationMessageFor(model => model.Content)*@
+          </p>    
+        <p>
+             
+             @Html.ValidationMessageFor(model => model.Content)
         </p>
         
 

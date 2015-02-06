@@ -24,25 +24,29 @@
     <li><div class="color blue"></div></li>
     <li><div class="color yellow"></div></li>
   </ul>
-  <ul class="nav">
-    <li><a href="@Url.Action("Index", "articleslist", new {})">Home</a><li>
-  
-   
   
    @if (!String.IsNullOrEmpty(Request.Params["Login"]) && @Request.Cookies["Login"] != null)
-    {
-             <li><a href="@Url.Action("Index", "NewArticle", new {})">New Article</a></li>
-             <li> <a href="@Url.Action("Index", "Login")" >Log Out (@Request.Cookies["Login"].Value)</a></li>
-              <hr class="line default"></hr>
+    { 
+        <ul class="nav">
+            <li><a href="@Url.Action("Index", "articleslist", new {})">Home</a><li>
+            <li><a href="@Url.Action("Index", "NewArticle", new {})">New Article</a><li>
+  
+             <h2 id="loginout">Log out</h2>
+            <hr class="line default"></hr>
+         </ul>
     }
     else
     {
-       <li><a href="@Url.Action("Index", "Register", new {})">Registration</a></li>
-       <h2 id="loginout">Log in</h2>
-       <hr class="line default"></hr>
+       <ul class="nav">
+            <li><a href="@Url.Action("Index", "articleslist", new {})">Home</a><li>
+            <li><a href="@Url.Action("Index", "Register", new {})">Registration</a><li>
+  
+             <h2 id="loginout">Log in</h2>
+            <hr class="line default"></hr>
+         </ul>
     }
      
-  </ul>
+ 
   
 </nav>
   

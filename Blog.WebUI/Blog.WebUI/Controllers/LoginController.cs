@@ -50,7 +50,7 @@ namespace Blog.WebUI.Controllers
                 {
                     HttpCookie cookie = new HttpCookie("Login", model.Login);
                     Response.Cookies.Add(cookie);
-                    FormsAuthentication.SetAuthCookie(model.Login, true);
+                    FormsAuthentication.SetAuthCookie(model.Login, true);                    
                     return RedirectToAction("Index", "ArticlesList");
                 }
                 return View();
