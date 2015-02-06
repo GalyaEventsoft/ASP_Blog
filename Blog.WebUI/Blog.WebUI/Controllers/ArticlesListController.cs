@@ -8,6 +8,7 @@ using Blog.Dal;
 
 namespace Blog.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class ArticlesListController : Controller
     {
         //

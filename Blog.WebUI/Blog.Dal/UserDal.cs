@@ -41,5 +41,21 @@ namespace Blog.Dal
                 context.SaveChanges();
             }
         }
+
+        public bool IsOur(string login, string password)
+        {
+            using (BlogEntities context = new BlogEntities())
+            {
+              BlogUser user =  context.BlogUsers.Where(u => u.Login == login && u.Password == password).FirstOrDefault();
+              if (user != null)
+              {
+                  return true;
+              }
+              else
+              {
+                  return false;
+              }
+            }
+        }
     }
 }

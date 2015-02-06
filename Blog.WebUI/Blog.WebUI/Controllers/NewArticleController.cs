@@ -9,6 +9,7 @@ using Blog.Dal;
 
 namespace Blog.WebUI.Controllers
 {
+    [Authorize]
     public class NewArticleController : Controller
     {
         //
@@ -16,18 +17,6 @@ namespace Blog.WebUI.Controllers
 
         public ActionResult Index()
         {
-            //if (model.Title != null && model.Content != null)
-            //{
-            //    new ArticleDal().AddArticle(new Article()
-            //    {
-            //        Title = model.Title,
-            //        Content = model.Content,
-            //        ShortContent = model.ShortContent,
-            //        UserId = 1,
-            //        CreationDate = DateTime.Now
-            //    });
-            //    return RedirectToAction("Index", "RedirectToAction");
-            //}
             return View();
         }
 

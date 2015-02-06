@@ -26,14 +26,27 @@
   </ul>
   <ul class="nav">
     <li><a href="@Url.Action("Index", "articleslist", new {})">Home</a><li>
-    <li><a href="@Url.Action("Index", "NewArticle", new {})">New Article</a><li>
-    <h2>Mood Colors</h2>
-  <hr class="line default"></hr>
+  
+   
+  
+   @if (!String.IsNullOrEmpty(Request.Params["Login"]) && @Request.Cookies["Login"] != null)
+    {
+             <li><a href="@Url.Action("Index", "NewArticle", new {})">New Article</a></li>
+             <li> <a href="@Url.Action("Index", "Login")" >Log Out (@Request.Cookies["Login"].Value)</a></li>
+              <hr class="line default"></hr>
+    }
+    else
+    {
+       <li><a href="@Url.Action("Index", "Register", new {})">Registration</a></li>
+       <h2 id="loginout">Log in</h2>
+       <hr class="line default"></hr>
+    }
+     
   </ul>
   
 </nav>
   
 <main class="default">
-    @RenderBody();
+    @RenderBody()
 </main></body>
     </html>

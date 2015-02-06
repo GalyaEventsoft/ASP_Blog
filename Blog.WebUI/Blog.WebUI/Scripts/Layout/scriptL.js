@@ -1,12 +1,36 @@
-﻿
+﻿(function($) {
+        var layoutPage = (function(){
+            var _private = {};
+            var _public = {};
 
-    $(document).ready(function () {
-        $('li').on('click', 'div', function () {
-            var x = $(this).attr('class').split(' ')[1];
-            $('main, .line').removeClass();
-            $('section div , hr').addClass('line');
-            $('main, .line').toggleClass(x);
+
+            _public.init = function () {
+                var colors = function () {
+                    var x = $(this).attr('class').split(' ')[1];
+                    $('main, .line').removeClass();
+                    $('section div, hr').addClass('line');
+                    $('main, .line').toggleClass(x);
+                };
+
+                $('li').on('click', 'div', colors);
+
+                var login = function () {
+                    var url = "/Login";
+                    window.location.href = url;
+                };
+
+                $('#loginout').on('click', login);
+               
+            };
+            return _public;
+        })();
+
+      
+       
+        $(function () {  
+            layoutPage.init();
         });
-    });
+       
+    })($);
 
   
