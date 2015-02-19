@@ -30,12 +30,19 @@ namespace Blog.WebUI.Controllers
                     Title = model.Title,
                     Content = model.Content,
                     ShortContent = model.ShortContent,
-                    UserId = 1,
+                    UserId = GetUserId(),
                     CreationDate = DateTime.Now
                 });
                 return RedirectToAction("Index", "articleslist");
             }
             return View();
+        }
+
+        private int GetUserId()
+        {
+            UserDal users = new UserDal();
+            int id = users.GetUserId(@Request.Cookies["Login"].Value);
+            return id;
         }
 
     }

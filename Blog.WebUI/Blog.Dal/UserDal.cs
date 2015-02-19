@@ -29,7 +29,7 @@ namespace Blog.Dal
         {
             using (BlogEntities context = new BlogEntities())
             {
-                return context.BlogUsers.Where(u => u.Name == name).Select(u => u.Id).FirstOrDefault();
+                return context.BlogUsers.Where(u => u.Login == name).Select(u => u.Id).FirstOrDefault();
             }
         }
 
@@ -37,6 +37,20 @@ namespace Blog.Dal
         {
             using (BlogEntities context = new BlogEntities())
             {
+                context.BlogUsers.Add(user);
+                context.SaveChanges();
+            }
+        }
+
+        public void AddUser(string name, string login, string pass)
+        {
+            using (BlogEntities context = new BlogEntities())
+            {
+                BlogUser user = new BlogUser();
+                user.Name = name;
+                user.Login = login;
+                user.Password = pass;
+
                 context.BlogUsers.Add(user);
                 context.SaveChanges();
             }

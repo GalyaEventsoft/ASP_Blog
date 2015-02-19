@@ -25,9 +25,10 @@
     <li><div class="color yellow"></div></li>
   </ul>
   
-   @if (!String.IsNullOrEmpty(Request.Params["Login"]) && @Request.Cookies["Login"] != null)
+   @if (!String.IsNullOrEmpty(Request.Params["Login"]))
     { 
         <ul class="nav">
+            <li>by @Request.Cookies["Login"].Value</li>
             <li><a href="@Url.Action("Index", "articleslist", new {})">Home</a><li>
             <li><a href="@Url.Action("Index", "NewArticle", new {})">New Article</a><li>
   
@@ -39,7 +40,7 @@
     {
        <ul class="nav">
             <li><a href="@Url.Action("Index", "articleslist", new {})">Home</a><li>
-            <li><a href="@Url.Action("Index", "Register", new {})">Registration</a><li>
+            <li><a href="@Url.Action("Index", "Registration", new {})">Registration</a><li>
   
              <h2 id="loginout">Log in</h2>
             <hr class="line default"></hr>

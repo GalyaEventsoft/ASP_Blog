@@ -18,14 +18,12 @@ namespace Blog.WebUI.Controllers
         public ActionResult Index()
         {
             if (!String.IsNullOrEmpty(Request.Params["Login"]))
-            {
+            {                
                 if (Request.Cookies["Login"] != null)
                 {
-                    var cookie = new HttpCookie("Login")
-                    {
-                        Expires = DateTime.Now.AddDays(-1d)
-                    };
-                    Response.Cookies.Add(cookie);
+                    HttpCookie myCookie = new HttpCookie("Login");
+                    myCookie.Expires = DateTime.Now.AddDays(-1d);
+                    Response.Cookies.Add(myCookie);
                 }
                 FormsAuthentication.SignOut();
 

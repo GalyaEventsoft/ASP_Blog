@@ -1,0 +1,45 @@
+﻿@model Blog.WebUI.Models.RegistrationModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<div style="text-align:center; height:100%; width:100%;">
+     @Html.ValidationSummary(true)
+    <section>
+    <form  action="@Url.Action("Index", "Registration")" method="post">
+        <p>
+            @Html.LabelFor(x => x.Name, new {@class="editor-label"})
+            @Html.ValidationMessageFor(model => model.Name)
+        </p>
+        <p>
+            @Html.TextBoxFor(x => x.Name)
+        </p>
+        <p>
+            @Html.LabelFor(x => x.Login, new {@class="editor-label"})
+            @Html.ValidationMessageFor(model => model.Login)
+        </p>
+        <p>
+            @Html.TextBoxFor(x => x.Login)
+        </p>
+        <p>
+            @Html.LabelFor(x => x.Password, new {@class="editor-label"})
+            @Html.ValidationMessageFor(model => model.Password)
+        </p>
+        <p>
+            @Html.PasswordFor(x => x.ConfirmPassword)</p>
+        <p>
+            <p>
+            @Html.LabelFor(x => x.ConfirmPassword, new {@class="editor-label"})
+            @Html.ValidationMessageFor(model => model.ConfirmPassword)
+        </p>
+        <p>
+            @Html.PasswordFor(x => x.Password)</p>
+        <p>
+            <button type="submit">Registration</button>
+        </p>
+        
+    </form>
+        </section>
+</div>

@@ -1,9 +1,11 @@
 ﻿@{
     Blog.Enyities.Article article = ViewBag.Article;
+    string name = ViewBag.Name;
 }
 
    
      <h1>@article.Title</h1>
+            <p class="publishdate">by @name</p>
      <div class="line default">
            <p class="publishdate">@(((DateTime)article.CreationDate).ToString())</p>
      </div>
