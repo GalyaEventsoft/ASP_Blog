@@ -1,0 +1,8 @@
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Enyities\bin\Release\Blog.Enyities.dll.config
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Enyities\bin\Release\Blog.Enyities.dll
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Enyities\bin\Release\Blog.Enyities.pdb
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Enyities\bin\Release\EntityFramework.dll
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Enyities\bin\Release\EntityFramework.xml
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Enyities\bin\Release\ru\EntityFramework.resources.dll
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Enyities\obj\Release\Blog.Enyities.dll
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Enyities\obj\Release\Blog.Enyities.pdb

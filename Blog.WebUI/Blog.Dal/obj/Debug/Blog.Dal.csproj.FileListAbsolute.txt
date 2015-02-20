@@ -9,3 +9,14 @@ C:\Users\Galya\Desktop\Blog.WebUI\Blog.Dal\bin\Debug\EntityFramework.xml
 C:\Users\Galya\Desktop\Blog.WebUI\Blog.Dal\bin\Debug\ru\EntityFramework.resources.dll
 C:\Users\Galya\Desktop\Blog.WebUI\Blog.Dal\obj\Debug\Blog.Dal.dll
 C:\Users\Galya\Desktop\Blog.WebUI\Blog.Dal\obj\Debug\Blog.Dal.pdb
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\bin\Debug\Blog.Dal.dll.config
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\bin\Debug\Blog.Dal.dll
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\bin\Debug\Blog.Dal.pdb
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\bin\Debug\Blog.Enyities.dll
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\bin\Debug\EntityFramework.dll
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\bin\Debug\Blog.Enyities.pdb
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\bin\Debug\EntityFramework.xml
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\bin\Debug\ru\EntityFramework.resources.dll
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\obj\Debug\Blog.Dal.csprojResolveAssemblyReference.cache
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\obj\Debug\Blog.Dal.dll
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\obj\Debug\Blog.Dal.pdb

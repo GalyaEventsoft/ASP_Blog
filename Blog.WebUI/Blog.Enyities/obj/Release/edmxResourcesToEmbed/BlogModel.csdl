@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BlogModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BlogEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Articles" EntityType="BlogModel.Article" />
+    <EntitySet Name="BlogUsers" EntityType="BlogModel.BlogUser" />
+    <EntitySet Name="Comments" EntityType="BlogModel.Comment" />
+    <AssociationSet Name="FK__Articles__UserId__0BC6C43E" Association="BlogModel.FK__Articles__UserId__0BC6C43E">
+      <End Role="BlogUsers" EntitySet="BlogUsers" />
+      <End Role="Articles" EntitySet="Articles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comments__Articl__1273C1CD" Association="BlogModel.FK__Comments__Articl__1273C1CD">
+      <End Role="Articles" EntitySet="Articles" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comments__UserId__117F9D94" Association="BlogModel.FK__Comments__UserId__117F9D94">
+      <End Role="BlogUsers" EntitySet="BlogUsers" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CreationDate" Type="DateTime" Precision="3" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="BlogUser" Relationship="BlogModel.FK__Articles__UserId__0BC6C43E" FromRole="Articles" ToRole="BlogUsers" />
+    <NavigationProperty Name="Comments" Relationship="BlogModel.FK__Comments__Articl__1273C1CD" FromRole="Articles" ToRole="Comments" />
+    <Property Type="String" Name="ShortContent" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BlogUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+    <Property Name="Login" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+    <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Articles" Relationship="BlogModel.FK__Articles__UserId__0BC6C43E" FromRole="BlogUsers" ToRole="Articles" />
+    <NavigationProperty Name="Comments" Relationship="BlogModel.FK__Comments__UserId__117F9D94" FromRole="BlogUsers" ToRole="Comments" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CreationDate" Type="DateTime" Precision="3" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="ArticleID" Type="Int32" Nullable="false" />
+    <Property Name="CommentText" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Article" Relationship="BlogModel.FK__Comments__Articl__1273C1CD" FromRole="Comments" ToRole="Articles" />
+    <NavigationProperty Name="BlogUser" Relationship="BlogModel.FK__Comments__UserId__117F9D94" FromRole="Comments" ToRole="BlogUsers" />
+  </EntityType>
+  <Association Name="FK__Articles__UserId__0BC6C43E">
+    <End Role="BlogUsers" Type="BlogModel.BlogUser" Multiplicity="1" />
+    <End Role="Articles" Type="BlogModel.Article" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BlogUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Articles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comments__Articl__1273C1CD">
+    <End Role="Articles" Type="BlogModel.Article" Multiplicity="1" />
+    <End Role="Comments" Type="BlogModel.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="ArticleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comments__UserId__117F9D94">
+    <End Role="BlogUsers" Type="BlogModel.BlogUser" Multiplicity="1" />
+    <End Role="Comments" Type="BlogModel.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BlogUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

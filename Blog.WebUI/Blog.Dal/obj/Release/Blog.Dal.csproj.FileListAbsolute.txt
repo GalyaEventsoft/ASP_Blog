@@ -1,0 +1,11 @@
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\bin\Release\Blog.Dal.dll.config
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\bin\Release\Blog.Dal.dll
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\bin\Release\Blog.Dal.pdb
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\bin\Release\Blog.Enyities.dll
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\bin\Release\EntityFramework.dll
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\bin\Release\Blog.Enyities.pdb
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\bin\Release\EntityFramework.xml
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\bin\Release\ru\EntityFramework.resources.dll
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\obj\Release\Blog.Dal.csprojResolveAssemblyReference.cache
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\obj\Release\Blog.Dal.dll
+D:\Навчання\ШАГ2\ASP.NET\Blog\Blog.WebUI\Blog.Dal\obj\Release\Blog.Dal.pdb

@@ -1,4 +1,7 @@
-﻿@{
+﻿@using System.Web.Optimization;
+
+
+@{
     Layout = null;
 }
 
@@ -8,8 +11,11 @@
 <head>
 
      <link rel="stylesheet" href="~/Styles/StyleSheet1.css" type="text/css"/>
-    <script src="~/Scripts/Lib/jquery-1.11.2.min.js"></script>
-     <script src="~/Scripts/Layout/scriptL.js"  type="text/javascript" ></script>
+    @*<script src="~/Scripts/Lib/jquery-1.11.2.min.js"></script>
+     <script src="~/Scripts/Layout/scriptL.js"  type="text/javascript" ></script>*@
+   @* @Scripts.Render("~/css/styles")*@
+     @Scripts.Render("~/bundles/scripts")
+     
     @RenderSection(name:"Header", required:false)
 
 <title>@ViewBag.Title</title>
